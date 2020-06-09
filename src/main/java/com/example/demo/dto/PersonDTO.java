@@ -2,11 +2,11 @@ package com.example.demo.dto;
 
 import lombok.Data;
 
-@Data
+@Data(staticConstructor = "of")
 public class PersonDTO {
 
-	private Integer id;
-	private String firstName;
-	private String lastName;
+	private final Integer id;
+	private final String firstName;
+	private final String lastName;
 	
 }

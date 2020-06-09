@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +21,7 @@ public class PersonController {
 
 	@GetMapping(value = "/people")
 	public String getPeople(ModelMap model) {
-		List<Person> people = new ArrayList<>();
-		this.personService.findAll().forEach(p -> people.add(p));
+		List<PersonDTO> people = this.personService.findAll();
 		model.put("people", people);
 		
 		return "people/list";
